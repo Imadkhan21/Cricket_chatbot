@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+    <!-- <style>
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -17,14 +17,18 @@
 
         .main-card {
             max-width: 700px;
+            width: 100%; /* ✅ Add this to ensure it uses full available width */
             margin: auto;
             background: white;
             border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(250, 250, 250, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* ✅ minor fix to shadow color */
             display: flex;
             flex-direction: column;
+            max-height: 100vh;
             height: 100vh;
+            box-sizing: border-box; /* ✅ Prevents layout breaks from padding */
         }
+
 
         .header {
             background-color: #6c4eff;
@@ -43,10 +47,17 @@
         }
 
         .chat-box {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-        }
+        height: 60vh;               /* Fixed height */
+        width: 100%;                /* ✅ Fill parent width */
+        min-width: 300px;           /* ✅ Prevent narrow shrink */
+        overflow-y: auto;
+        padding: 20px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+
+
+
 
         .chat-entry {
             margin-bottom: 10px;
@@ -151,7 +162,7 @@
 
 
 
-    </style>
+    </style> -->
 </head>
 <body>
 
